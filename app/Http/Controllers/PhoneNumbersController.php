@@ -34,6 +34,10 @@ class PhoneNumbersController extends Controller
             ->with('output', $result['output']);
     }
 
+    public function api($number) {
+        return json_encode(Number::check($number));
+    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [

@@ -24,3 +24,5 @@ Route::post('/upload','FileController@upload');
 Route::resource('/phone_numbers','PhoneNumbersController');
 
 Route::post('/phone_numbers', 'PhoneNumbersController@test');
+
+Route::get('/check/{number}', 'PhoneNumbersController@api');
