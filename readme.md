@@ -1,23 +1,40 @@
-## About Mobi Cleanse
+## About Mobi Cleanse - Proof of Concept Assignment
 
 Mobi Cleanse is a web application that allows you to sanitise mobile numbers.
 
+## Using Mobi Cleanse
 
+There are three ways to use Mobi Cleanse:
 
-## Learning Laravel
+1. Install the Laravel Application
+2. Use our demo system's web interface
+3. Use the API endpoint at http://mobi-clean.gatewaymodules.com/api/cleanse/{$number}
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+The quickest way is to visit our demo site at http://mobi-cleanse.gatewaymodules.com.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+Click on Login and use these credentials (auto filled):
+Username: `user@domain.com`
+Password: `demo12`
 
-## Contributing
+## Configuration File
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Edit `/config/app.php` to specify:
 
-## Security Vulnerabilities
+### Country code ###
+The application is pre-confirmed to use 27 (South African Dialing Code)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### Mobile prefixes ###
+Every country has it's own mobile prefixes. South Africa's is documented here:
+https://en.wikipedia.org/wiki/Telephone_numbers_in_South_Africa
+
+Use the `'mobile_prefixes' =>` array in `/config/app.php` to specify your country specific mobile prefixes.
+
+## To Do
+
+* Anonymous API calls with rate limiting
+* Ajax type file uploading
+* Progress bar style file uploading
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+This software is licensed under the [MIT license](http://opensource.org/licenses/MIT).
