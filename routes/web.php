@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::post('/upload','FileController@upload');
+
+Route::resource('/phone_numbers','PhoneNumbersController');
+
+Route::post('/phone_numbers', 'PhoneNumbersController@test');
