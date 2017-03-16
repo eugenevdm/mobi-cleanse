@@ -13,8 +13,8 @@ If you upload a file, you have the option of downloading the corrected numbers.
 There are three ways to use Mobi Cleanse:
 
 1. Use our demo system's web interface at http://mobi-cleanse.gatewaymodules.com/
-2. Use the API endpoint at http://mobi-cleanse.gatewaymodules.com/api/cleanse/{number}, e.g. http://mobi-cleanse.gatewaymodules.com/check/0823096710
-2. Install the Laravel Application on your localhost
+2. Use the API endpoint at /check/{number}, e.g. http://mobi-cleanse.gatewaymodules.com/check/0823096710
+3. Install the Laravel Application on your localhost
 
 The quickest way is to visit our demo site at http://mobi-cleanse.gatewaymodules.com/
 
@@ -23,6 +23,8 @@ The username and password to access this system is:
 Username: `user@domain.com`
 
 Password: `demo12`
+
+These values are auto filled when you visit the page so you can just press the Login button.
 
 ## Configuration File
 
