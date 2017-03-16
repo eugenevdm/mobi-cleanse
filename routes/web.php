@@ -26,3 +26,5 @@ Route::resource('/phone_numbers','PhoneNumbersController');
 Route::post('/phone_numbers', 'PhoneNumbersController@test');
 
 Route::get('/check/{number}', 'PhoneNumbersController@api');
+
+Route::get('/download', 'PhoneNumbersController@download');

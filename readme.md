@@ -6,6 +6,8 @@ This could be useful if you are trying to send SMSses and you are not sure if yo
 
 The application let's you upload a CSV file containing IDs and mobile phone numbers, or access the API directly so that you can sanitise individual numbers.
 
+If you upload a file, you have the option of downloading the corrected numbers.
+
 ## Using Mobi Cleanse
 
 There are three ways to use Mobi Cleanse:
@@ -63,6 +65,13 @@ http://mobi-cleanse.gatewaymodules.com/check/0823096710 returns:
 `output` is the cleansed number.
 
 `state` can be `success`, `error`, or `warning` and `correction` will contain a human readable message if the operation succeeded or not.
+
+## Testing
+
+Some Browser and Unit tests are provided.
+
+Use `php artisan dusk` to perform the browser tests, and
+`vendor/phpunit/phpunit/phpunit` to perform the unit tests.
 
 ## To Do
 

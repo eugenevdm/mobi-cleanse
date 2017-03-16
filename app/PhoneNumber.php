@@ -15,4 +15,8 @@ class PhoneNumber extends Model
         'correction'
     ];
 
+    public function scopeCorrected($query) {
+        return $query->where('state', 'success');
+    }
+
 }

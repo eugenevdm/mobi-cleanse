@@ -6,7 +6,11 @@
     <div class="container">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">All Phone Numbers</div>
+                <div class="panel-heading">All Phone Numbers
+                    <small>
+                        <a style="float:right" href="{{ url('download') }}">Download Corrected Numbers</a>
+                    </small>
+                </div>
                 <div class="panel-body">
 
                     @if (session('status'))
@@ -39,10 +43,12 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            {{ $phone_numbers->links() }}
                         </div>
-                        There are {{ $phone_number->count() }} records.
+                        There are {{ $phone_number->count() }} total records.<br>
+                        {{  \App\PhoneNumber::corrected()->count() }} numbers were corrected and are ready for downloading.
                     @else
-                        <span>There are no mobile numbers imported yet. Please go to the <a href="/home">Dashboard</a> to import some.</span>
+                        <span>There are no mobile numbers imported yet. Please go to the <a href="{{ url('/home') }}">Dashboard</a> to import some.</span>
                     @endif
                 </div>
             </div>

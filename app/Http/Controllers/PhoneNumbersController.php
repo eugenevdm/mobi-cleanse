@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\PhoneNumber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 
 use Facades\ {
@@ -19,7 +20,7 @@ class PhoneNumbersController extends Controller
     }
 
     public function index() {
-        $phone_numbers = PhoneNumber::orderBy('output', 'desc')->get();
+        $phone_numbers = PhoneNumber::orderBy('output', 'desc')->paginate();
         return view('phone_numbers.index', compact('phone_numbers'));
     }
 
@@ -36,6 +37,24 @@ class PhoneNumbersController extends Controller
 
     public function api($number) {
         return json_encode(Number::check($number));
+    }
+
+    public function download() {
+        $table = PhoneNumber::where('state', 'success')->get();
+        $filename = "mobile_numbers.csv";
+        $handle = fopen($filename, 'w+');
+        fputcsv($handle, ['id', 'number']);
+        foreach($table as $row) {
+            fputcsv($handle, [
+                $row['guid'],
+                $row['output'],
+            ]);
+        }
+        fclose($handle);
+        $headers = array(
+            'Content-Type' => 'text/csv',
+        );
+        return Response::download($filename, $filename, $headers);
     }
 
     protected function validator(array $data)
