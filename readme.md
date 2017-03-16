@@ -62,7 +62,7 @@ http://mobi-cleanse.gatewaymodules.com/check/0823096710 returns:
 
 `output` is the cleansed number.
 
-States can be `success`, `error`, or `warning` and correction will contain a human readable message of if the operation succeeded or not.
+`state` can be `success`, `error`, or `warning` and `correction` will contain a human readable message if the operation succeeded or not.
 
 ## To Do
 

@@ -40,6 +40,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        There are {{ $phone_number->count() }} records.
                     @else
                         <span>There are no mobile numbers imported yet. Please go to the <a href="/home">Dashboard</a> to import some.</span>
                     @endif
